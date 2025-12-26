@@ -1,0 +1,28 @@
+@font-face {  
+    font-family: "Berlin";  
+    src: url("../fonts/BerlinSansFBCyrillic-Regular.ttf") format(‘truetype’);  
+    font-weight: normal;  
+    font-style: normal;  
+}  
+
+:root {
+    /* Главные параметры */
+    --main-color-background-app:                #CECFD4;
+    --main-color-gradient-background-blocks:    linear-gradient(to left top,#d9dade, #FFFFFF);
+
+    --main-block-border-radius:         80px;
+    --main-block-small-border-radius:   40px;
+
+    --input-border-radius: 16px;
+
+
+    /* Парметры бордера */
+    --border-color:         #FFFFFF;
+    --border-color-dark:    #000000;
+
+    /* Цвета текстов */
+    --color-font-main:      #000000e1;
+    --color-font-light:     #FFFFFF;
+    --color-font-error:     #ff0000;
+
+}
