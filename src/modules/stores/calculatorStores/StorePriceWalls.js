@@ -210,6 +210,11 @@ export const storePriceWalls = defineStore('storePriceWalls', () => {
         return infoSettings.steps[numberStep].inputs;
     }
 
+    //Установка новых значений после сохранения данных на этапах
+    function setValueInputStep(){
+        
+    }
+
     //Возвращение значений
     return ({
         getCode,

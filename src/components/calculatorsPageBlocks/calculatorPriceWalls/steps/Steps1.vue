@@ -38,9 +38,8 @@
     //функцния сохранения данных расчета
     async function saveDate(event){
 
-        let error = await checkValidate(event.target);
-
-        if(!error){
+        let countError = await checkValidate(event.target);
+        if(countError == 0){
             const infoRequest = event.target.getElementsByTagName('input');
             const answerSave = storeSaveData.saveData("step-1", infoRequest);
             switch(answerSave){
@@ -55,14 +54,17 @@
     async function checkValidate(event){
         let errorArray = storeValidationFunc.checkType(event, inputInfo);
         let error = false;
+        let countError = 0;
         await errorArray.forEach((elem, key) => {
+            console.log(elem);
             if(elem){
                 error = showError(key);
+                countError++;
             } else {
                 error = deleteErrorMessage(key);
             }
         });
-        return error;
+        return countError;
     }
 
     //отображение ошибок

@@ -1,8 +1,11 @@
 //Стор сохранения данных
-import { defineStore } from 'pinia';
-import { ref, reactive } from 'vue';
+import { defineStore }      from 'pinia';
+import { ref, reactive }    from 'vue';
+import { storePriceWalls }  from '../calculatorStores/StorePriceWalls';
 
 export const storeSaveData = defineStore('storeSaveData', () => {
+
+    const useStorePriceWalls = storePriceWalls();
 
     //Сохранение данных
     const data = reactive({
