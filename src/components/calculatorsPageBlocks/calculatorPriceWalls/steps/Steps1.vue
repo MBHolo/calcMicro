@@ -67,7 +67,7 @@
 
     //отображение ошибок
     async function showError(key){
-        let idName = "#steps-1-" + (key + 1);
+        let idName = "#steps-1--" + (key + 1);
         const elemeLabel   = document.querySelector(idName);
         const elemSpanError = elemeLabel.querySelector(".error__message");
         elemSpanError.innerHTML = "Значение не может быть отрицательным";
@@ -76,7 +76,7 @@
 
     //Удаление информации об ошибки, если ошибка исправлена
     async function deleteErrorMessage(key){
-        let idName = "#steps-1-" + (key + 1);
+        let idName = "#steps-1--" + (key + 1);
         const elemeLabel   = document.querySelector(idName);
         const elemSpanError = elemeLabel.querySelector(".error__message");
         elemSpanError.innerHTML = "";

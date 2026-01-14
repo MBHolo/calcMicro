@@ -11,40 +11,40 @@ export const storeSaveData = defineStore('storeSaveData', () => {
     //Сохранение данных
     const data = reactive({
         "step-1": {
-            "steps-1-1": {
+            "steps-1--1": {
                 value: 0
             },
-            "steps-1-2": {
+            "steps-1--2": {
                 value: 0
             },
-            "steps-1-3": {
+            "steps-1--3": {
                 value: 0
             },
-            "steps-1-4": {
+            "steps-1--4": {
                 value: 0
             },
-            "steps-1-5": {
+            "steps-1--5": {
                 value: 0
             },
-            "steps-1-6": {
+            "steps-1--6": {
                 value: 0
             },
-            "steps-1-7": {
+            "steps-1--7": {
                 value: 0
             },
-            "steps-1-8": {
+            "steps-1--8": {
                 value: 0
             },
-            "steps-1-9": {
+            "steps-1--9": {
                 value: 0
             },
-            "steps-1-10": {
+            "steps-1--10": {
                 value: 0
             },
-            "steps-1-11": {
+            "steps-1--11": {
                 value: 0
             },
-            "steps-1-12": {
+            "steps-1--12": {
                 value: 0
             },
         },
@@ -124,7 +124,7 @@ export const storeSaveData = defineStore('storeSaveData', () => {
     function updateDefaultFormValue(numberStep){
         Object.keys(data["step-"+numberStep]).forEach(key => {
             const value = data["step-"+numberStep][key].value;
-            const index = key.split("-")[2];
+            const index = key.split("--")[1];
             useStorePriceWalls.setValueInputStep(numberStep, index, value);
         });
     }

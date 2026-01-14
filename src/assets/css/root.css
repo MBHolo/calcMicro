@@ -10,8 +10,9 @@
     --main-color-background-app:                #CECFD4;
     --main-color-gradient-background-blocks:    linear-gradient(to left top,#d9dade, #FFFFFF);
 
-    --main-block-border-radius:         80px;
-    --main-block-small-border-radius:   40px;
+    --main-block-border-radius:             80px;
+    --main-block-small-border-radius:       40px;
+    --main-block-ver-ysmall-border-radius:  20px;
 
     --input-border-radius: 16px;
 

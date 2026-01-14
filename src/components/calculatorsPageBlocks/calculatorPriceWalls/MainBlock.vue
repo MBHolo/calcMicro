@@ -5,28 +5,28 @@
     <div class="step__main__block">
         <Step1 
             v-if="propsCaclulatorInfo.stepIsActive == 1" 
-            :stepInputInfo="stepInputInfo" 
+            :stepInputInfo="stepInputInfo[1].inputs" 
             :useStoreValidationFunc="useStoreValidationFunc"
             :useStoreSaveData="useStoreSaveData"
             @choiceNext="choiceNextStep">
         </Step1>
         <Step2 
             v-if="propsCaclulatorInfo.stepIsActive == 2" 
-            :stepInputInfo="stepInputInfo" 
+            :stepInputInfo="stepInputInfo[2].inputs" 
             :useStoreValidationFunc="useStoreValidationFunc"
             :useStoreSaveData="useStoreSaveData"
             @choiceNext="choiceNextStep">
         </Step2>
         <Step3 
             v-if="propsCaclulatorInfo.stepIsActive == 3" 
-            :stepInputInfo="stepInputInfo" 
+            :stepInputInfo="stepInputInfo[3].inputs" 
             :useStoreValidationFunc="useStoreValidationFunc"
             :useStoreSaveData="useStoreSaveData"
             @choiceNext="choiceNextStep">
         </Step3>
         <Step4 
             v-if="propsCaclulatorInfo.stepIsActive == 4" 
-            :stepInputInfo="stepInputInfo" 
+            :stepInputInfo="stepInputInfo[4].inputs" 
             :useStoreValidationFunc="useStoreValidationFunc"
             :useStoreSaveData="useStoreSaveData"
             @choiceNext="choiceNextStep">
@@ -49,7 +49,7 @@
 
     //Получение информации для отображения стадий
     const propsCaclulatorInfo   = defineProps(["stepIsActive", "nameStep", "stepInputInfo"]);
-    const stepInputInfo         = ref(propsCaclulatorInfo.stepInputInfo.value);   
+    const stepInputInfo         = ref(propsCaclulatorInfo.stepInputInfo);   
 
     const emit = defineEmits(["choiceNextStep"]);
     function choiceNextStep(event){

@@ -10,7 +10,7 @@
                 <MainBlock 
                     :stepIsActive="stepIsActive" 
                     :nameStep="nameStep" 
-                    :stepInputInfo="stepInputInfo"
+                    :stepInputInfo ="stepInputInfo"
                     @choiceNextStep="choiceNextStep"></MainBlock>
             </div>
         </div>
@@ -33,7 +33,7 @@
     const stepsInfoStep         = useStorePriceWalls.getStepsInfo();
     const stepIsActive          = ref('1');
     const nameStep              = ref('');
-    const stepInputInfo         = reactive([]);
+    const stepInputInfo         = reactive(useStorePriceWalls.getStepInputs());
 
     //Получение информации при первом запуске
     getStepInfo(stepIsActive.value);
@@ -43,7 +43,6 @@
         useStorePriceWalls.setIsActiveStep(key);
         stepIsActive.value  = useStorePriceWalls.getIsActiveStep();
         nameStep.value      = useStorePriceWalls.getStepName(key);
-        stepInputInfo.value = useStorePriceWalls.getStepInputs(key);
     }
 
     //Функция выбора стадии
