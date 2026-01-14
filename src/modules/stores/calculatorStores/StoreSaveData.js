@@ -2,6 +2,7 @@
 import { defineStore }      from 'pinia';
 import { ref, reactive }    from 'vue';
 import { storePriceWalls }  from '../calculatorStores/StorePriceWalls';
+import { number } from 'yup';
 
 export const storeSaveData = defineStore('storeSaveData', () => {
 
@@ -98,6 +99,9 @@ export const storeSaveData = defineStore('storeSaveData', () => {
             }
         });
 
+        //Обновляем дефолтные значения
+        updateDefaultFormValue(1);
+
         return answer;
     }
 
@@ -114,6 +118,15 @@ export const storeSaveData = defineStore('storeSaveData', () => {
     //Функция сохраниня информации в блоке четвертой стадии
     function saveStep4(){
         
+    }
+
+    //Измененние реакивных дефолтных значений формы
+    function updateDefaultFormValue(numberStep){
+        Object.keys(data["step-"+numberStep]).forEach(key => {
+            const value = data["step-"+numberStep][key].value;
+            const index = key.split("-")[2];
+            useStorePriceWalls.setValueInputStep(numberStep, index, value);
+        });
     }
 
     //Возвращение значений

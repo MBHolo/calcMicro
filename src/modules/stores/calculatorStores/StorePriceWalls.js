@@ -26,7 +26,8 @@ export const storePriceWalls = defineStore('storePriceWalls', () => {
             1: {
                 isActive:   true,
                 comleted:   false,
-                name: 'Технико-экономические показатели',
+                name:       'Технико-экономические показатели',
+                type:       'non-group',
                 inputs: {
                     1: {
                         typeInput:      "number",
@@ -35,7 +36,7 @@ export const storePriceWalls = defineStore('storePriceWalls', () => {
                         name:           "steps-1-1",
                         VariableType:   "not-nagative-number",
                         required:       "Y",
-                        valueDefault:   390,
+                        value:          390,
                     },
                     2: {
                         typeInput:      "number",
@@ -44,7 +45,7 @@ export const storePriceWalls = defineStore('storePriceWalls', () => {
                         name:           "steps-1-2",
                         VariableType:   "not-nagative-number",
                         required:       "Y",
-                        valueDefault:   16,
+                        value:          16,
                     },
                     3: {
                         typeInput:      "number",
@@ -53,7 +54,7 @@ export const storePriceWalls = defineStore('storePriceWalls', () => {
                         name:           "steps-1-3",
                         VariableType:   "not-nagative-number",
                         required:       "Y",
-                        valueDefault:   97.8,
+                        value:          97.8,
                     },
                     4: {
                         typeInput:      "number",
@@ -62,7 +63,7 @@ export const storePriceWalls = defineStore('storePriceWalls', () => {
                         name:           "steps-1-4",
                         VariableType:   "not-nagative-number",
                         required:       "Y",
-                        valueDefault:   23,
+                        value:          23,
                     },
                     5: {
                         typeInput:      "number",
@@ -71,7 +72,7 @@ export const storePriceWalls = defineStore('storePriceWalls', () => {
                         name:           "steps-1-5",     
                         VariableType:   "not-nagative-number",  
                         required:       "Y", 
-                        valueDefault:   6240,  
+                        value:          6240,  
                     },
                     6: {
                         typeInput:      "number",
@@ -80,7 +81,7 @@ export const storePriceWalls = defineStore('storePriceWalls', () => {
                         name:           "steps-1-6",
                         VariableType:   "not-nagative-number",
                         required:       "Y",
-                        valueDefault:   2.97,
+                        value:          2.97,
                     },
                     7: {
                         typeInput:      "number",
@@ -89,7 +90,7 @@ export const storePriceWalls = defineStore('storePriceWalls', () => {
                         name:           "steps-1-7",
                         VariableType:   "not-nagative-number",
                         required:       "Y",
-                        valueDefault:   120.46,
+                        value:          120.46,
                     },
                     8: {
                         typeInput:      "number",
@@ -98,7 +99,7 @@ export const storePriceWalls = defineStore('storePriceWalls', () => {
                         name:           "steps-1-8",
                         VariableType:   "not-nagative-number",
                         required:       "Y",
-                        valueDefault:   4,
+                        value:          4,
                     },
                     9: {
                         typeInput:      "number",
@@ -107,7 +108,7 @@ export const storePriceWalls = defineStore('storePriceWalls', () => {
                         name:           "steps-1-9",
                         VariableType:   "not-nagative-number",
                         required:       "Y",
-                        valueDefault:   9699,
+                        value:          9699,
                     },
                     10: {
                         typeInput:      "number",
@@ -116,7 +117,7 @@ export const storePriceWalls = defineStore('storePriceWalls', () => {
                         name:           "steps-1-10",
                         VariableType:   "not-nagative-number",
                         required:       "Y",
-                        valueDefault:   150000,
+                        value:          150000,
                     },
                     11: {
                         typeInput:      "number",
@@ -125,7 +126,7 @@ export const storePriceWalls = defineStore('storePriceWalls', () => {
                         name:           "steps-1-11",
                         VariableType:   "not-nagative-number",
                         required:       "Y",
-                        valueDefault:   137.8,
+                        value:          137.8,
                     },
                     12: {
                         typeInput:      "number",
@@ -134,15 +135,43 @@ export const storePriceWalls = defineStore('storePriceWalls', () => {
                         name:           "steps-1-12",
                         VariableType:   "not-nagative-number",
                         required:       "Y",
-                        valueDefault:   5,
+                        value:          5,
                     }
 
                 },
             },
             2: {
-                isActive: false,
+                isActive:   false,
                 comleted:   false,
-                name: 'Расценки на материалы, доставку и работы',
+                name:       'Расценки на материалы, доставку и работы',
+                type:       "group",
+                imputs: {
+                    1: {
+                        type: "select.add.auto",
+                        data:{
+                            1: {
+                                name:       "Коркино",
+                                value:      "korkino",
+                                isActive:   true,
+                                inputs: {
+                                    1: {
+                                        label: "Расценка за 1км",
+                                        value: 95,
+                                    }
+                                }    
+                            },
+                        }
+                    },
+                    2: {
+
+                    },
+                    3: {
+
+                    },
+                    4:{
+
+                    },
+                },
             },
             3: {
                 isActive: false,
@@ -211,8 +240,9 @@ export const storePriceWalls = defineStore('storePriceWalls', () => {
     }
 
     //Установка новых значений после сохранения данных на этапах
-    function setValueInputStep(){
-        
+    function setValueInputStep(numberStep, numberInput, valueInput){
+        //Получение списка инпутов
+        infoSettings.steps[numberStep].inputs[numberInput].value = valueInput;
     }
 
     //Возвращение значений
@@ -222,6 +252,7 @@ export const storePriceWalls = defineStore('storePriceWalls', () => {
         getIsActiveStep,
         getStepName,
         getStepInputs,
+        setValueInputStep,
         setComletedStep,
         getComletedStep,
 

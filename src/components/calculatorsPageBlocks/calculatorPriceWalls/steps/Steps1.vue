@@ -8,7 +8,7 @@
                         <input 
                             :name   = "item.name"
                             :type   = "item.typeInput"
-                            :value  = "item.valueDefault" 
+                            :value  = "item.value" 
                             step    = "0.00000001"
                             :class  = "item.typeBlock == 'static' ? 'static__block': ''"
                         />
@@ -37,7 +37,6 @@
 
     //функцния сохранения данных расчета
     async function saveDate(event){
-
         let countError = await checkValidate(event.target);
         if(countError == 0){
             const infoRequest = event.target.getElementsByTagName('input');
@@ -56,7 +55,6 @@
         let error = false;
         let countError = 0;
         await errorArray.forEach((elem, key) => {
-            console.log(elem);
             if(elem){
                 error = showError(key);
                 countError++;

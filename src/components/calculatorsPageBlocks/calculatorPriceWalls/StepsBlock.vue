@@ -31,7 +31,6 @@
 
     //Переключение стадии
     function choiceStep(key){
-        console.log(propsInfoSteps.stepsInfoStep.comleted[1]);
         emit('choiceStep', key);
     }
 </script>
