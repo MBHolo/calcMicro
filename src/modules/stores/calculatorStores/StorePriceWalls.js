@@ -147,13 +147,14 @@ export const storePriceWalls = defineStore('storePriceWalls', () => {
                 type:       "group",
                 inputs: {
                     1: {
-                        type: "select.add.auto",
-                        name: "Доставка",
+                        type:       "select.add.auto",
+                        name:       "Доставка",
+                        nameSelect: "group1--select1",
                         data:{
                             1: {
                                 name:       "Коркино",
                                 value:      "korkino",
-                                isActive:   true,
+                                id:         1,
                                 inputs: {
                                     1: {
                                         label: "Расценка за 1км",
@@ -186,26 +187,26 @@ export const storePriceWalls = defineStore('storePriceWalls', () => {
                             2: {
                                 name:       "Тест локация",
                                 value:      "Test",
-                                isActive:   false,
+                                id:         2,
                                 inputs: {
                                     1: {
                                         label: "Расценка за 1км",
-                                        value: 95,
+                                        value: 95123,
                                         name: "steps-2--group-1--select-2--1",
                                     },
                                     2: {
                                         label: "Грузоподъемность, кг.",
-                                        value: 20000,
+                                        value: 2000011,
                                         name: "steps-2--group-1--select-2--2",
                                     },
                                     3: {
                                         label: "Объем кузова, м3",
-                                        value: 96,
+                                        value: 964452,
                                         name: "steps-2--group-1--select-2--3",
                                     },
                                     4: {
                                         label: "Расстояние до объекта",
-                                        value: 35,
+                                        value: 353,
                                         name: "steps-2--group-1--select-2--4",
                                     },
                                     5: {
@@ -223,7 +224,7 @@ export const storePriceWalls = defineStore('storePriceWalls', () => {
                         data:{
                             1: {
                                 label: "Отделочные работы",
-                                value: 1253,
+                                value: 1353,
                                 ratio: 2.71,
                                 name: "steps-2--group-2--1",
                             },
@@ -232,7 +233,37 @@ export const storePriceWalls = defineStore('storePriceWalls', () => {
                                 value: 3374,
                                 ratio: 2.71,
                                 name: "steps-2--group-2--2",                                
-                            }
+                            },
+                            3: {
+                                label: "Монтаж перегородок из ГВЛ",
+                                value: 830,
+                                ratio: 2.71,
+                                name: "steps-2--group-2--3",                                
+                            },
+                            4:{
+                                label: "Кладка стен >250мм (кирпич)",
+                                value: 6417,
+                                ratio: 2.71,
+                                name: "steps-2--group-2--4",  
+                            },
+                            5:{
+                                label: "Кладка стен <250мм (кирпич)",
+                                value: 3794,
+                                ratio: 2.71,
+                                name: "steps-2--group-2--5", 
+                            },
+                            6:{
+                                label: "Кладка стен >250мм (блок)",
+                                value: 6417,
+                                ratio: 2.71,
+                                name: "steps-2--group-2--6",
+                            },
+                            7:{
+                                label: "Кладка стен <250мм (блок)",
+                                value: 3794,
+                                ratio: 2.71,
+                                name: "steps-2--group-2--7",
+                            },                            
                         }
                     },
                     3: {
@@ -250,7 +281,31 @@ export const storePriceWalls = defineStore('storePriceWalls', () => {
                                 value: 3374,
                                 ratio: 2.71,
                                 name: "steps-2--group-3--2",                               
-                            }
+                            },
+                            3: {
+                                label: "Штукатурка",
+                                value: 830,
+                                ratio: 2.71,
+                                name: "steps-2--group-3--3",                               
+                            },     
+                            4: {
+                                label: "Сетка",
+                                value: 6417,
+                                ratio: 2.71,
+                                name: "steps-2--group-3--4",                               
+                            },   
+                            5: {
+                                label: "Маячок",
+                                value: 3794,
+                                ratio: 2.71,
+                                name: "steps-2--group-3--5",                               
+                            },   
+                            6: {
+                                label: "Клей",
+                                value: 6417,
+                                ratio: 2.71,
+                                name: "steps-2--group-3--6",                               
+                            },                  
                         }
                     },
                     4:{
@@ -259,14 +314,54 @@ export const storePriceWalls = defineStore('storePriceWalls', () => {
                         data: {
                             1: {
                                 label: "Кирпич пустотелый керамический 250мм",
-                                value: 1353,
+                                value: 13543,
                                 name: "steps-2--group-4--1",
                             },
                             2: {
                                 label: "Блок силикатный \"Поревит\" 180мм",
                                 value: 3374,
                                 name: "steps-2--group-4--2",
-                            }
+                            },
+                            3: {
+                                label: "Блок силикатный Simat СБ Пу 180мм",
+                                value: 830,
+                                name: "steps-2--group-4--3",
+                            },
+                            4:{
+                                label: "Блок силикатный Simat СБ Пу 200мм",
+                                value: 6417,
+                                name: "steps-2--group-4--4",
+                            },
+                            5:{
+                                label: "Газоблок \"Инси\" D500 200мм",
+                                value: 3794,
+                                name: "steps-2--group-4--5",
+                            },
+                            6:{
+                                label: "Газоблок \"Инси\" D600 240мм",
+                                value: 6417,
+                                name: "steps-2--group-4--6",
+                            },
+                            7:{
+                                label: "Газоблок \"Инси\" D600 240мм",
+                                value: 6417,
+                                name: "steps-2--group-4--7",
+                            },    
+                            8:{
+                                label: "Газоблок \"Инси\" D500 200мм",
+                                value: 3794,
+                                name: "steps-2--group-4--8",
+                            },
+                            9:{
+                                label: "Газоблок \"Инси\" D600 240мм",
+                                value: 6417,
+                                name: "steps-2--group-4--9",
+                            },
+                            10:{
+                                label: "Газоблок \"Инси\" D600 240мм",
+                                value: 6417,
+                                name: "steps-2--group-4--10",
+                            },                         
                         }
                     },
                 },

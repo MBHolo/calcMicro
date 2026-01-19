@@ -28,7 +28,19 @@ input{
     font-size: 16px;
 }
 
-input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }  
+input.small__input{
+    border-radius: var(--input-border-radius);
+    padding: 12px;
+    font-size: 14px;
+    text-align: center;
+    max-width: 100px;
+    color: #000;
+    border: 2px solid var(--border-color-dark);
+}
+
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; margin: 0; 
+}  
 
 button{
     padding: 10px 30px;
@@ -41,4 +53,11 @@ button{
 button:hover{
     background-color: var(--color-font-main);
     color: var(--color-font-light);
+}
+
+select{
+    padding: 10px 10px;
+    border: 2px solid var(--border-color-dark);
+    border-radius: var(--input-border-radius);
+    font-size: 14px
 }

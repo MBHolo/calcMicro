@@ -68,10 +68,10 @@
         border: 1px solid var(--border-color);
         background: var(--main-color-gradient-background-blocks);
         border-radius: var(--main-block-small-border-radius);
-        width: 80%;
+        width: 85%;
     }
     .history__container{
-        width: 20%;
+        width: 15%;
     }
     .title__contaner{
         margin-top: 40px;
